@@ -63,7 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
     // setState to update our non-existent appearance.
 
     await [Permission.sms, Permission.locationWhenInUse].request();
-    position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+    // position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
   }
 
   void _getCurrentLocation() async {
@@ -72,6 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
         _locationMessage = "Latitud: ${position.latitude}\nLongitud: ${position.longitude}";
         _locationLink = "https://www.google.com/maps/place/${position.latitude},${position.longitude}";
       });
+      _sendsms(phone);
 
   }
 
@@ -160,7 +161,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 if (isValid){
                   formKey.currentState!.save();
                   _getCurrentLocation();
-                  _sendsms(phone);
                 }
               },
               child: Text(
