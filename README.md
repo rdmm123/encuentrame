@@ -1,4 +1,4 @@
-# location_sms
+# Encuéntrame
 
 This project consists of an app that is able to get the user's location using the [Geolocator](https://pub.dev/packages/geolocator) plugin and send it vía sms with the [Telephony](https://pub.dev/packages/telephony) plugin.
 
